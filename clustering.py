@@ -6,7 +6,7 @@ import pandas as pd
 
 #рагрузка данных из xlsx файла
 def data_download():
-    wb = openpyxl.load_workbook(filename='3.xlsx')
+    wb = openpyxl.load_workbook(filename='input.xlsx')
     sheet = wb['Лист1']
     rows = sheet.iter_rows()
     data_gen = ([cell.value for cell in row] for row in rows)
@@ -127,7 +127,7 @@ def normalize(data):
 
 #вывод данных в xlsx файл
 def data_output(clusters):
-    wb = openpyxl.load_workbook(filename='3.xlsx')
+    wb = openpyxl.load_workbook(filename='input.xlsx')
     sheet = wb['Лист1']
     rows = sheet.iter_rows()
     data_gen = ([cell.value for cell in row] for row in rows)
@@ -147,7 +147,7 @@ def data_output(clusters):
 
     ## save to xlsx file
 
-    filepath = '4.xlsx'
+    filepath = 'output.xlsx'
 
     df.to_excel(filepath, index=False)
     return data

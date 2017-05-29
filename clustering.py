@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-#рагрузка данных из xlsx файла
+#загрузка данных из xlsx файла
 def data_download():
     wb = openpyxl.load_workbook(filename='input.xlsx')
     sheet = wb['Лист1']
